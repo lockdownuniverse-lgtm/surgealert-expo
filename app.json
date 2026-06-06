@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "SurgeAlert",
+    "slug": "surgealert",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#09090c"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.surgealert.mobile",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SurgeAlert uses your location to show crowd alerts near you and to submit anonymous reports.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SurgeAlert uses your location to alert you of crowd surges nearby."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#09090c"
+      },
+      "package": "app.surgealert.mobile",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "SurgeAlert uses your location to show crowd surge alerts near you."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#D85A30",
+          "sounds": []
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d19241b4-e11f-4989-9f55-1de55d8d2118"
+      }
+    },
+    "owner": "mbrownfield8"
+  }
+}
