@@ -6,7 +6,7 @@ import Constants from 'expo-constants';
 
 const API_BASE_URL =
   Constants.expoConfig?.extra?.apiUrl ??
-  'https://your-api.surgealert.app/api';  // ← replace with your deployed URL
+  'https://surgealert-api-production.up.railway.app/api';  // ← replace with your deployed URL
 
 const client = axios.create({
   baseURL: API_BASE_URL,
@@ -49,7 +49,7 @@ export async function confirmReport(reportId) {
 // ─── Devices ─────────────────────────────────────────────────────────────────
 
 export async function registerDeviceToken({ token, lat, lon, platform }) {
-  const { data } = await client.post('http://your-push-service.surgealert.app/devices/register', {
+  const { data } = await client.post('https://surgealert-api-production.up.railway.app/api/devices/register', {
     token, lat, lon, platform,
   });
   return data;
