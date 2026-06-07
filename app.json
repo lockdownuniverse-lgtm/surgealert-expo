@@ -19,7 +19,9 @@
         "NSLocationAlwaysAndWhenInUseUsageDescription": "SurgeAlert uses your location to alert you of crowd surges nearby."
       }
     },
-    "android": {
+    "android": {"config": {
+    "googleMaps": {
+      "apiKey": "AIzaSyAdKWJbO0i0iDKMswYrSUccJXtgJgzS59c"
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#09090c"
