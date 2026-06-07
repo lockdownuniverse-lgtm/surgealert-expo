@@ -15,29 +15,26 @@
       "supportsTablet": false,
       "bundleIdentifier": "app.surgealert.mobile",
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "SurgeAlert uses your location to show crowd alerts near you and to submit anonymous reports.",
+        "NSLocationWhenInUseUsageDescription": "SurgeAlert uses your location to show crowd alerts near you.",
         "NSLocationAlwaysAndWhenInUseUsageDescription": "SurgeAlert uses your location to alert you of crowd surges nearby."
       }
     },
     "android": {
-  "config": {
-    "googleMaps": {
-      "apiKey": "AIzaSyAdKWJbO0i0iDKMswYrSUccJXtgJgzS59c"
-    }
-  },
-  "adaptiveIcon": {
-    "foregroundImage": "./assets/adaptive-icon.png",
-    "backgroundColor": "#09090c"
-  },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAdKWJbO0i0iDKMswYrSUccJXtgJgzS59c"
+        }
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#09090c"
       },
       "package": "app.surgealert.mobile",
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
         "RECEIVE_BOOT_COMPLETED",
-        "VIBRATE",
-        "android.permission.ACCESS_COARSE_LOCATION",
-        "android.permission.ACCESS_FINE_LOCATION"
+        "VIBRATE"
       ]
     },
     "plugins": [
