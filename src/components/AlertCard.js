@@ -6,7 +6,7 @@ import { SeverityPill } from './SeverityPill';
 import { colors, spacing, radius, typography } from '../utils/theme';
 
 const MESSAGES = {
-  HIGH: 'Large crowd surge — consider avoiding this area.',
+  HIGH: 'Large crowd surge — avoid this area.',
   MED:  'Elevated crowd activity nearby. Use caution.',
   LOW:  'Unusual crowd activity reported nearby.',
 };
@@ -31,9 +31,9 @@ export function AlertCard({ alert, onPress }) {
         <Text style={styles.footerText}>
           {alert.components?.reportCount ?? 0} report{alert.components?.reportCount !== 1 ? 's' : ''}
         </Text>
-        {alert.components?.spikeCount > 0 && (
-          <Text style={[styles.footerText, { color:colors.primary, marginLeft:2 }]}>
-            · Social media spike
+        {(alert.components?.spikeCount ?? 0) > 0 && (
+          <Text style={[styles.footerText, { color:colors.primary, marginLeft:4 }]}>
+            · Social spike detected
           </Text>
         )}
       </View>
@@ -43,14 +43,14 @@ export function AlertCard({ alert, onPress }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor:colors.bg, borderRadius:radius.lg,
+    backgroundColor:colors.bgCard, borderRadius:radius.lg,
     borderWidth:1, borderColor:colors.border,
     padding:spacing.lg, marginHorizontal:spacing.lg, marginBottom:spacing.md,
   },
   header:   { flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginBottom:spacing.sm },
-  meta:     { ...typography.micro, color:colors.textLight },
-  location: { ...typography.h3, marginBottom:spacing.xs },
-  message:  { ...typography.small, color:colors.textMuted, marginBottom:spacing.sm },
+  meta:     { ...typography.micro },
+  location: { fontSize:15, fontWeight:'500', color:colors.text, marginBottom:spacing.xs },
+  message:  { ...typography.small, marginBottom:spacing.sm },
   footer:   { flexDirection:'row', borderTopWidth:1, borderTopColor:colors.borderLight, paddingTop:spacing.sm, marginTop:spacing.xs },
   footerText: { ...typography.micro },
 });

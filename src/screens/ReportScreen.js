@@ -38,9 +38,9 @@ export function ReportScreen({ navigation }) {
     setSubmitting(true);
     try {
       const result = await submitReport({
-        lat: location.lat, lon: location.lon,
-        type: selectedType, crowdSize,
-        note: note.trim() || undefined,
+        lat:location.lat, lon:location.lon,
+        type:selectedType, crowdSize,
+        note:note.trim() || undefined,
       });
       Alert.alert(
         result.alertFired ? '🚨 Alert Triggered' : '✓ Report Submitted',
@@ -59,19 +59,16 @@ export function ReportScreen({ navigation }) {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.title}>Report Surge Activity</Text>
-      <Text style={styles.sub}>Anonymous. Helps warn everyone nearby.</Text>
+      <Text style={styles.sub}>Anonymous · Helps warn everyone nearby</Text>
 
       <Text style={styles.sectionLabel}>WHAT ARE YOU SEEING?</Text>
       <View style={styles.typeGrid}>
         {TYPES.map(t => (
-          <TouchableOpacity
-            key={t.key}
+          <TouchableOpacity key={t.key}
             style={[styles.typeCard, selectedType === t.key && styles.typeCardActive]}
-            onPress={() => setType(t.key)}
-            activeOpacity={0.75}
-          >
+            onPress={() => setType(t.key)} activeOpacity={0.75}>
             <Text style={styles.typeIcon}>{t.icon}</Text>
-            <Text style={[styles.typeLabel, selectedType === t.key && { color:colors.primaryDark }]}>
+            <Text style={[styles.typeLabel, selectedType === t.key && { color:colors.primary }]}>
               {t.label}
             </Text>
           </TouchableOpacity>
@@ -81,19 +78,14 @@ export function ReportScreen({ navigation }) {
       <Text style={styles.sectionLabel}>CROWD SIZE</Text>
       <View style={styles.sizeList}>
         {SIZES.map(s => (
-          <TouchableOpacity
-            key={s.value}
+          <TouchableOpacity key={s.value}
             style={[styles.sizeRow, crowdSize === s.value && styles.sizeRowActive]}
-            onPress={() => setCrowdSize(s.value)}
-            activeOpacity={0.75}
-          >
+            onPress={() => setCrowdSize(s.value)} activeOpacity={0.75}>
             <View style={[styles.radio, crowdSize === s.value && styles.radioActive]}>
               {crowdSize === s.value && <View style={styles.radioDot} />}
             </View>
             <View style={{ flex:1 }}>
-              <Text style={[styles.sizeName, crowdSize === s.value && { color:colors.primaryDark }]}>
-                {s.label}
-              </Text>
+              <Text style={[styles.sizeName, crowdSize === s.value && { color:colors.text }]}>{s.label}</Text>
               <Text style={styles.sizeSub}>{s.sub}</Text>
             </View>
           </TouchableOpacity>
@@ -113,48 +105,47 @@ export function ReportScreen({ navigation }) {
 
       <TouchableOpacity
         style={[styles.submitBtn, submitting && { opacity:0.6 }]}
-        onPress={handleSubmit}
-        disabled={submitting}
-        activeOpacity={0.8}
-      >
+        onPress={handleSubmit} disabled={submitting} activeOpacity={0.8}>
         {submitting
           ? <ActivityIndicator color={colors.bg} />
-          : <Text style={styles.submitText}>Submit Report</Text>
-        }
+          : <Text style={styles.submitText}>Submit Report</Text>}
       </TouchableOpacity>
 
-      <Text style={styles.disclaimer}>
-        Reports are anonymous. Nothing is tied to your identity.
-      </Text>
+      <Text style={styles.disclaimer}>Reports are anonymous. Nothing tied to your identity.</Text>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex:1, backgroundColor:colors.bgSecondary },
-  content:   { padding:spacing.lg, paddingBottom:spacing.xxl },
-  title:     { ...typography.h2, marginBottom:spacing.xs },
-  sub:       { ...typography.small, marginBottom:spacing.xl },
-  sectionLabel: { ...typography.label, color:colors.textMuted, marginBottom:spacing.sm, marginTop:spacing.lg },
-  typeGrid:  { flexDirection:'row', flexWrap:'wrap', gap:spacing.sm },
-  typeCard:  {
-    width:'47%', backgroundColor:colors.bg, borderRadius:radius.lg,
+  container:    { flex:1, backgroundColor:colors.bg },
+  content:      { padding:spacing.lg, paddingBottom:spacing.xxl },
+  title:        { fontSize:22, fontWeight:'600', color:colors.text, letterSpacing:-0.3, marginBottom:spacing.xs },
+  sub:          { ...typography.small, marginBottom:spacing.xl },
+  sectionLabel: { ...typography.mono, color:colors.textMuted, marginBottom:spacing.sm, marginTop:spacing.lg },
+  typeGrid:     { flexDirection:'row', flexWrap:'wrap', gap:spacing.sm },
+  typeCard:     {
+    width:'47%', backgroundColor:colors.bgTertiary, borderRadius:radius.lg,
     borderWidth:1, borderColor:colors.border, padding:spacing.lg,
     alignItems:'center', gap:spacing.sm,
   },
   typeCardActive: { borderColor:colors.primary, backgroundColor:colors.primaryLight },
-  typeIcon:  { fontSize:28 },
-  typeLabel: { ...typography.small, fontWeight:'600', textAlign:'center' },
-  sizeList:  { backgroundColor:colors.bg, borderRadius:radius.lg, borderWidth:1, borderColor:colors.border, overflow:'hidden' },
-  sizeRow:   { flexDirection:'row', alignItems:'center', padding:spacing.md, gap:spacing.md, borderBottomWidth:1, borderBottomColor:colors.borderLight },
-  sizeRowActive: { backgroundColor:colors.primaryLight },
-  radio:     { width:20, height:20, borderRadius:10, borderWidth:1.5, borderColor:colors.border, alignItems:'center', justifyContent:'center' },
-  radioActive:   { borderColor:colors.primary },
-  radioDot:  { width:10, height:10, borderRadius:5, backgroundColor:colors.primary },
-  sizeName:  { ...typography.body, fontWeight:'500' },
-  sizeSub:   { ...typography.micro },
-  noteInput: { backgroundColor:colors.bg, borderRadius:radius.lg, borderWidth:1, borderColor:colors.border, padding:spacing.md, minHeight:80, ...typography.body, textAlignVertical:'top' },
-  submitBtn: { backgroundColor:colors.primary, borderRadius:radius.lg, padding:spacing.lg, alignItems:'center', marginTop:spacing.xl },
-  submitText:    { ...typography.body, color:colors.bg, fontWeight:'700' },
-  disclaimer:    { ...typography.micro, textAlign:'center', marginTop:spacing.md, color:colors.textLight },
+  typeIcon:     { fontSize:26 },
+  typeLabel:    { fontSize:12, fontWeight:'500', color:colors.textMuted, textAlign:'center' },
+  sizeList:     { backgroundColor:colors.bgTertiary, borderRadius:radius.lg, borderWidth:1, borderColor:colors.border, overflow:'hidden' },
+  sizeRow:      { flexDirection:'row', alignItems:'center', padding:spacing.md, gap:spacing.md, borderBottomWidth:1, borderBottomColor:colors.borderLight },
+  sizeRowActive:{ backgroundColor:'rgba(216,90,48,0.06)' },
+  radio:        { width:18, height:18, borderRadius:9, borderWidth:1.5, borderColor:colors.border, alignItems:'center', justifyContent:'center' },
+  radioActive:  { borderColor:colors.primary },
+  radioDot:     { width:8, height:8, borderRadius:4, backgroundColor:colors.primary },
+  sizeName:     { fontSize:13, fontWeight:'500', color:colors.textMuted },
+  sizeSub:      { ...typography.micro, marginTop:1 },
+  noteInput:    {
+    backgroundColor:colors.bgTertiary, borderRadius:radius.lg,
+    borderWidth:1, borderColor:colors.border,
+    padding:spacing.md, minHeight:80, color:colors.text,
+    fontSize:14, textAlignVertical:'top',
+  },
+  submitBtn:    { backgroundColor:colors.primary, borderRadius:radius.lg, padding:spacing.lg, alignItems:'center', marginTop:spacing.xl },
+  submitText:   { fontSize:15, fontWeight:'600', color:'#fff' },
+  disclaimer:   { ...typography.micro, textAlign:'center', marginTop:spacing.md },
 });

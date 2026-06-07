@@ -16,10 +16,13 @@ import { colors, spacing, typography } from '../utils/theme';
 const Tab   = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const TAB_ICONS = { Map:'🗺', Alerts:'🔔', Report:'＋', Settings:'⚙️' };
-
-function TabIcon({ name, focused }) {
-  return <Text style={{ fontSize:20, opacity:focused ? 1 : 0.45 }}>{TAB_ICONS[name]}</Text>;
+function TabIcon({ label, focused }) {
+  const icons = { Map:'◈', Alerts:'◎', Report:'＋', Settings:'⚙' };
+  return (
+    <Text style={{ fontSize:18, opacity:focused ? 1 : 0.4, color:focused ? colors.primary : colors.textMuted }}>
+      {icons[label]}
+    </Text>
+  );
 }
 
 function Tabs() {
@@ -27,11 +30,22 @@ function Tabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarIcon:  ({ focused }) => <TabIcon name={route.name} focused={focused} />,
+        tabBarIcon:  ({ focused }) => <TabIcon label={route.name} focused={focused} />,
         tabBarActiveTintColor:   colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
-        tabBarStyle: { borderTopColor:colors.border, borderTopWidth:1, paddingBottom:4, height:58 },
-        tabBarLabelStyle: { ...typography.micro, marginTop:2 },
+        tabBarStyle: {
+          backgroundColor: colors.bgTertiary,
+          borderTopColor:  colors.border,
+          borderTopWidth:  1,
+          paddingBottom:   4,
+          height:          58,
+        },
+        tabBarLabelStyle: {
+          fontSize:      10,
+          fontFamily:    'SpaceMono',
+          letterSpacing: 0.04,
+          marginTop:     2,
+        },
       })}
     >
       <Tab.Screen name="Map"      component={MapScreen} />
@@ -50,7 +64,13 @@ export function AppNavigator() {
         <Stack.Screen
           name="AlertDetail"
           component={AlertDetailScreen}
-          options={{ headerShown:true, title:'Alert Details', headerTintColor:colors.primary }}
+          options={{
+            headerShown:       true,
+            title:             'Alert Details',
+            headerTintColor:   colors.primary,
+            headerStyle:       { backgroundColor:colors.bgTertiary },
+            headerTitleStyle:  { color:colors.text, fontSize:15, fontWeight:'500' },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -60,19 +80,20 @@ export function AppNavigator() {
 function AlertDetailScreen({ route }) {
   const { alert } = route.params;
   const age = formatDistanceToNow(new Date(alert.createdAt), { addSuffix:true });
+
   return (
     <ScrollView style={ds.container} contentContainerStyle={ds.content}>
       <SeverityPill severity={alert.severity} />
-      <Text style={[typography.h2, { marginTop:spacing.lg }]}>
+      <Text style={[ds.location, { marginTop:spacing.lg }]}>
         {alert.locationLabel || 'Unknown location'}
       </Text>
-      <Text style={[typography.small, { marginTop:spacing.xs }]}>Reported {age}</Text>
+      <Text style={typography.small}>Reported {age}</Text>
 
       <View style={ds.statRow}>
         {[
-          { val:alert.score,                                    label:'Danger score' },
+          { val:alert.score,                                                      label:'Danger score' },
           { val:alert.distanceKm ? `${(alert.distanceKm*0.621).toFixed(1)} mi` : '—', label:'Distance' },
-          { val:alert.components?.reportCount ?? 0,             label:'Reports' },
+          { val:alert.components?.reportCount ?? 0,                              label:'Reports' },
         ].map(({ val, label }) => (
           <View key={label} style={ds.stat}>
             <Text style={ds.statValue}>{val}</Text>
@@ -81,7 +102,7 @@ function AlertDetailScreen({ route }) {
         ))}
       </View>
 
-      <Text style={[typography.label, { color:colors.textMuted, marginTop:spacing.xl, marginBottom:spacing.sm }]}>
+      <Text style={[typography.mono, { color:colors.textMuted, marginTop:spacing.xl, marginBottom:spacing.sm }]}>
         DATA SOURCES
       </Text>
       <View style={ds.card}>
@@ -107,14 +128,15 @@ function AlertDetailScreen({ route }) {
 }
 
 const ds = StyleSheet.create({
-  container: { flex:1, backgroundColor:colors.bgSecondary },
-  content:   { padding:spacing.lg, paddingBottom:spacing.xxl },
-  statRow:   { flexDirection:'row', marginTop:spacing.xl, gap:spacing.sm },
-  stat:      { flex:1, backgroundColor:colors.bg, borderRadius:12, borderWidth:1, borderColor:colors.border, padding:spacing.md, alignItems:'center' },
-  statValue: { ...typography.h2, color:colors.primary },
-  statLabel: { ...typography.micro, marginTop:2 },
-  card:      { backgroundColor:colors.bg, borderRadius:12, borderWidth:1, borderColor:colors.border, overflow:'hidden' },
-  sourceRow: { flexDirection:'row', alignItems:'center', gap:spacing.md, padding:spacing.md },
-  sourceIcon:  { fontSize:22 },
-  sourceTitle: { ...typography.small, fontWeight:'600', marginBottom:2 },
+  container:   { flex:1, backgroundColor:colors.bg },
+  content:     { padding:spacing.lg, paddingBottom:spacing.xxl },
+  location:    { fontSize:20, fontWeight:'600', color:colors.text, letterSpacing:-0.3, marginBottom:spacing.xs },
+  statRow:     { flexDirection:'row', marginTop:spacing.xl, gap:spacing.sm },
+  stat:        { flex:1, backgroundColor:colors.bgTertiary, borderRadius:12, borderWidth:1, borderColor:colors.border, padding:spacing.md, alignItems:'center' },
+  statValue:   { fontSize:20, fontWeight:'600', color:colors.primary, fontFamily:'SpaceMono' },
+  statLabel:   { ...typography.micro, marginTop:2 },
+  card:        { backgroundColor:colors.bgTertiary, borderRadius:12, borderWidth:1, borderColor:colors.border, overflow:'hidden' },
+  sourceRow:   { flexDirection:'row', alignItems:'center', gap:spacing.md, padding:spacing.md },
+  sourceIcon:  { fontSize:20 },
+  sourceTitle: { fontSize:13, fontWeight:'500', color:colors.text, marginBottom:2 },
 });

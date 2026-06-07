@@ -51,14 +51,14 @@ export function AlertsScreen({ navigation }) {
 }
 
 const s = StyleSheet.create({
-  container: { flex:1, backgroundColor:colors.bgSecondary },
-  header:    { backgroundColor:colors.bg, padding:spacing.lg, paddingTop:spacing.xl, borderBottomWidth:1, borderBottomColor:colors.border, marginBottom:spacing.md },
-  title:     { ...typography.h2 },
-  updated:   { ...typography.micro, marginTop:spacing.xs },
-  empty:     { flex:1, alignItems:'center', justifyContent:'center', padding:spacing.xxl },
-  emptyIcon: { fontSize:48, color:colors.low, marginBottom:spacing.md },
-  emptyTitle: { ...typography.h3, color:colors.low, marginBottom:spacing.sm },
-  emptySub:  { ...typography.small, textAlign:'center', marginBottom:spacing.xl },
-  refreshBtn: { borderWidth:1, borderColor:colors.primary, borderRadius:8, paddingHorizontal:spacing.xl, paddingVertical:spacing.sm },
+  container:      { flex:1, backgroundColor:colors.bg },
+  header:         { backgroundColor:colors.bgTertiary, padding:spacing.lg, paddingTop:spacing.xl, borderBottomWidth:1, borderBottomColor:colors.border, marginBottom:spacing.md },
+  title:          { fontSize:22, fontWeight:'600', color:colors.text, letterSpacing:-0.3 },
+  updated:        { ...typography.micro, marginTop:spacing.xs },
+  empty:          { flex:1, alignItems:'center', justifyContent:'center', padding:spacing.xxl },
+  emptyIcon:      { fontSize:40, color:colors.low, marginBottom:spacing.md },
+  emptyTitle:     { fontSize:16, fontWeight:'500', color:colors.low, marginBottom:spacing.sm },
+  emptySub:       { ...typography.small, textAlign:'center', marginBottom:spacing.xl },
+  refreshBtn:     { borderWidth:1, borderColor:colors.primary, borderRadius:8, paddingHorizontal:spacing.xl, paddingVertical:spacing.sm },
   refreshBtnText: { ...typography.small, color:colors.primary, fontWeight:'600' },
 });
