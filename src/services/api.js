@@ -49,7 +49,7 @@ export async function confirmReport(reportId) {
 // ─── Devices ─────────────────────────────────────────────────────────────────
 
 export async function registerDeviceToken({ token, lat, lon, platform }) {
-  const { data } = await client.post('https://surgealert-api-production.up.railway.app/api/devices/register', {
+  const { data } = await client.post('https://surgealert-push-production.up.railway.app/devices/register', {
     token, lat, lon, platform,
   });
   return data;
