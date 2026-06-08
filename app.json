@@ -35,7 +35,8 @@
         "ACCESS_COARSE_LOCATION",
         "RECEIVE_BOOT_COMPLETED",
         "VIBRATE"
-      ]
+      ],
+      "googleServicesFile": "./google-services.json"
     },
     "plugins": [
       [

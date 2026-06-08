@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "748732728665",
+    "project_id": "surgealert-dba3a",
+    "storage_bucket": "surgealert-dba3a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748732728665:android:a4b1df6e53fc1e7f773848",
+        "android_client_info": {
+          "package_name": "app.surgealert.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyKHzhpaMVhhB6gs9_AenJr9addiaDzaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
