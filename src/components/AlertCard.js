@@ -27,6 +27,11 @@ export function AlertCard({ alert, onPress }) {
         {alert.locationLabel || 'Unknown location'}
       </Text>
       <Text style={styles.message}>{MESSAGES[alert.severity]}</Text>
+      {alert.recentNote ? (
+        <View style={styles.noteBox}>
+          <Text style={styles.noteText}>💬 "{alert.recentNote}"</Text>
+        </View>
+      ) : null}
       <View style={styles.footer}>
         <Text style={styles.footerText}>
           {alert.components?.reportCount ?? 0} report{alert.components?.reportCount !== 1 ? 's' : ''}
@@ -51,6 +56,8 @@ const styles = StyleSheet.create({
   meta:     { ...typography.micro },
   location: { fontSize:15, fontWeight:'500', color:colors.text, marginBottom:spacing.xs },
   message:  { ...typography.small, marginBottom:spacing.sm },
+  noteBox:  { backgroundColor:'rgba(255,255,255,0.04)', borderRadius:6, padding:spacing.sm, marginBottom:spacing.sm, borderLeftWidth:2, borderLeftColor:colors.primary },
+  noteText: { fontSize:12, color:colors.textMuted, fontStyle:'italic', lineHeight:18 },
   footer:   { flexDirection:'row', borderTopWidth:1, borderTopColor:colors.borderLight, paddingTop:spacing.sm, marginTop:spacing.xs },
   footerText: { ...typography.micro },
 });
