@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { colors, spacing, radius, typography } from '../utils/theme';
 
-const GOOGLE_API_KEY = 'AIzaSyAdKWJbO0i0iDKMswYrSUccJXtgJgzS59c';
+const GOOGLE_API_KEY = 'AIzaSyA-XDvgDxmxF1HqrB66DRdJ51pKAxelYqI';
 
 export function CitySearch({ onLocationSelected, onClose }) {
   const [query, setQuery]           = useState('');
