@@ -58,6 +58,12 @@ const styles = StyleSheet.create({
   message:  { ...typography.small, marginBottom:spacing.sm },
   noteBox:  { backgroundColor:'rgba(255,255,255,0.04)', borderRadius:6, padding:spacing.sm, marginBottom:spacing.sm, borderLeftWidth:2, borderLeftColor:colors.primary },
   noteText: { fontSize:12, color:colors.textMuted, fontStyle:'italic', lineHeight:18 },
+  voteRow:   { flexDirection:'row', gap:8, marginBottom:spacing.sm },
+  voteBtn:   { flex:1, paddingVertical:spacing.sm, borderRadius:6, alignItems:'center', borderWidth:1 },
+  confirmBtn:{ borderColor:'#12b76a', backgroundColor:'rgba(18,183,106,0.08)' },
+  denyBtn:   { borderColor:'#f04438', backgroundColor:'rgba(240,68,56,0.08)' },
+  votedBtn:  { opacity:0.5 },
+  voteBtnText:{ fontSize:11, fontWeight:'600', color:colors.text },
   footer:   { flexDirection:'row', borderTopWidth:1, borderTopColor:colors.borderLight, paddingTop:spacing.sm, marginTop:spacing.xs },
   footerText: { ...typography.micro },
 });
