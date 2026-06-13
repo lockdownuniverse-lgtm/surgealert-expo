@@ -10,11 +10,15 @@ import { useSurgeAlerts } from '../hooks/useSurgeAlerts';
 import { SeverityPill } from '../components/SeverityPill';
 import { AlertCard } from '../components/AlertCard';
 import { colors, spacing, radius, typography, severityColor } from '../utils/theme';
+import { CitySearch } from '../components/CitySearch';
 
 export function MapScreen({ navigation }) {
   const { location, loading:locLoading, error:locError } = useLocation();
-  const { alerts, score, loading, lastUpdated, refresh, highestSeverity } = useSurgeAlerts(location);
+  const activeLocation = searchLocation || location;
+  const { alerts, score, loading, lastUpdated, refresh, highestSeverity } = useSurgeAlerts(activeLocation);
   const mapRef = useRef(null);
+  const [searchOpen, setSearchOpen] = React.useState(false);
+  const [searchLocation, setSearchLocation] = React.useState(null);
 
   useEffect(() => {
     if (location && mapRef.current) {
@@ -24,6 +28,14 @@ export function MapScreen({ navigation }) {
       }, 800);
     }
   }, [location?.lat, location?.lon]);
+
+  function handleLocationSelected(loc) {
+    setSearchLocation(loc);
+    mapRef.current?.animateToRegion({
+      latitude: loc.lat, longitude: loc.lon,
+      latitudeDelta: 0.02, longitudeDelta: 0.02,
+    }, 800);
+  }
 
   if (locLoading) {
     return (
@@ -78,11 +90,21 @@ export function MapScreen({ navigation }) {
       </MapView>
 
       {/* Status bar */}
+      {searchOpen && (
+        <CitySearch
+          onLocationSelected={handleLocationSelected}
+          onClose={() => setSearchOpen(false)}
+        />
+      )}
+
       <View style={styles.statusBar}>
-        <View>
+        <TouchableOpacity onPress={() => setSearchOpen(true)}>
           <Text style={styles.appName}>⚡ SurgeAlert</Text>
-          {score && <Text style={styles.scoreText}>Score {score.score}/100</Text>}
-        </View>
+          {searchLocation
+            ? <Text style={styles.scoreText}>📍 {searchLocation.label}</Text>
+            : score && <Text style={styles.scoreText}>Score {score.score}/100</Text>
+          }
+        </TouchableOpacity>
         <SeverityPill severity={highestSeverity} />
       </View>
 
