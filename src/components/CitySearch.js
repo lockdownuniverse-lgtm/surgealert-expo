@@ -87,7 +87,7 @@ export function CitySearch({ onLocationSelected, onClose }) {
 }
 
 const styles = StyleSheet.create({
-  container:   { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:colors.bg, zIndex:100 },
+  container:   { position:'absolute', top:0, left:0, right:0, bottom:0, backgroundColor:colors.bg, zIndex:9999, elevation:9999 },
   inputRow:    { flexDirection:'row', alignItems:'center', padding:spacing.lg, paddingTop:54, gap:spacing.md, borderBottomWidth:1, borderBottomColor:colors.border },
   input:       { flex:1, backgroundColor:colors.bgTertiary, borderRadius:radius.lg, paddingHorizontal:spacing.md, paddingVertical:spacing.sm, color:colors.text, fontSize:15, borderWidth:1, borderColor:colors.border },
   cancelBtn:   { paddingHorizontal:spacing.sm },

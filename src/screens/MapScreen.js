@@ -14,11 +14,11 @@ import { CitySearch } from '../components/CitySearch';
 
 export function MapScreen({ navigation }) {
   const { location, loading:locLoading, error:locError } = useLocation();
-  const activeLocation = searchLocation || location;
-  const { alerts, score, loading, lastUpdated, refresh, highestSeverity } = useSurgeAlerts(activeLocation);
   const mapRef = useRef(null);
   const [searchOpen, setSearchOpen] = React.useState(false);
   const [searchLocation, setSearchLocation] = React.useState(null);
+  const activeLocation = searchLocation || location;
+  const { alerts, score, loading, lastUpdated, refresh, highestSeverity } = useSurgeAlerts(activeLocation);
 
   useEffect(() => {
     if (location && mapRef.current) {
