@@ -98,12 +98,15 @@ export function MapScreen({ navigation }) {
       )}
 
       <View style={styles.statusBar}>
-        <TouchableOpacity onPress={() => setSearchOpen(true)}>
+        <View>
           <Text style={styles.appName}>⚡ SurgeAlert</Text>
           {searchLocation
             ? <Text style={styles.scoreText}>📍 {searchLocation.label}</Text>
             : score && <Text style={styles.scoreText}>Score {score.score}/100</Text>
           }
+        </View>
+        <TouchableOpacity onPress={() => setSearchOpen(true)} style={styles.searchBtn}>
+          <Text style={styles.searchIcon}>🔍</Text>
         </TouchableOpacity>
         <SeverityPill severity={highestSeverity} />
       </View>
@@ -171,6 +174,8 @@ const styles = StyleSheet.create({
   container: { flex:1, backgroundColor:colors.bg },
   centered:  { flex:1, justifyContent:'center', alignItems:'center', padding:spacing.xl, backgroundColor:colors.bg },
   map:       { flex:1 },
+  searchBtn: { padding:8, marginLeft:'auto' },
+  searchIcon: { fontSize:20 },
   statusBar: {
     position:'absolute', top:54, left:spacing.lg, right:spacing.lg,
     backgroundColor:colors.bgTertiary, borderRadius:radius.lg,
