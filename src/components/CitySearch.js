@@ -15,15 +15,36 @@ export function CitySearch({ onLocationSelected, onClose }) {
 
   async function search(text) {
     setQuery(text);
+    console.log('[search] searching for:', text);
     if (text.length < 2) { setResults([]); return; }
     setLoading(true);
     try {
-      const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${encodeURIComponent(text)}&types=(cities)&key=${GOOGLE_API_KEY}`;
-      const res = await fetch(url);
+      const url = `https://places.googleapis.com/v1/places:autocomplete`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': GOOGLE_API_KEY,
+        },
+        body: JSON.stringify({
+          input: text,
+          includedPrimaryTypes: ['locality', 'administrative_area_level_1'],
+          languageCode: 'en',
+        }),
+      });
       const data = await res.json();
-      setResults(data.predictions || []);
+      const suggestions = (data.suggestions || []).map(s => ({
+        place_id: s.placePrediction?.placeId,
+        description: s.placePrediction?.text?.text,
+        structured_formatting: {
+          main_text: s.placePrediction?.structuredFormat?.mainText?.text,
+          secondary_text: s.placePrediction?.structuredFormat?.secondaryText?.text,
+        }
+      })).filter(s => s.place_id);
+      setResults(suggestions);
     } catch (err) {
-      console.warn('[search] Autocomplete error:', err.message);
+      console.warn('[search] Autocomplete error:', err);
+      console.warn('[search] Error message:', err.message);
     } finally {
       setLoading(false);
     }
@@ -35,7 +56,8 @@ export function CitySearch({ onLocationSelected, onClose }) {
       const res = await fetch(url);
       const data = await res.json();
       const loc = data.results[0]?.geometry?.location;
-      if (loc) {
+      console.log("[search] loc:", JSON.stringify(loc));
+    if (loc) {
         onLocationSelected({
           lat: loc.lat,
           lon: loc.lng,

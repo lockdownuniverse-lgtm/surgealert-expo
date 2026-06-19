@@ -17,7 +17,7 @@ const Tab   = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function TabIcon({ label, focused }) {
-  const icons = { Map:'◈', Alerts:'◎', Report:'＋', Settings:'⚙' };
+  const icons = { Map:'🗺', Alerts:'🚨', Report:'🆕', Settings:'⚙' };
   return (
     <Text style={{ fontSize:18, opacity:focused ? 1 : 0.4, color:focused ? colors.primary : colors.textMuted }}>
       {icons[label]}
@@ -37,8 +37,9 @@ function Tabs() {
           backgroundColor: colors.bgTertiary,
           borderTopColor:  colors.border,
           borderTopWidth:  1,
-          paddingBottom:   4,
-          height:          58,
+          paddingBottom:   20,
+          paddingTop:      10,
+          height:          80,
         },
         tabBarLabelStyle: {
           fontSize:      10,
