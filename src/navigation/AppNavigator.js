@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { formatDistanceToNow } from 'date-fns';
 
@@ -26,6 +27,7 @@ function TabIcon({ label, focused }) {
 }
 
 function Tabs() {
+  const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -37,9 +39,9 @@ function Tabs() {
           backgroundColor: colors.bgTertiary,
           borderTopColor:  colors.border,
           borderTopWidth:  1,
-          paddingBottom:   20,
-          paddingTop:      10,
-          height:          80,
+          paddingBottom:   70,
+          paddingTop:      8,
+          height:          135,
         },
         tabBarLabelStyle: {
           fontSize:      10,

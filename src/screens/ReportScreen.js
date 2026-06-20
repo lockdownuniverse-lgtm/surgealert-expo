@@ -9,10 +9,26 @@ import { submitReport } from '../services/api';
 import { colors, spacing, radius, typography } from '../utils/theme';
 
 const TYPES = [
-  { key:'crowd',  label:'Crowd Surge',  icon:'👥' },
-  { key:'block',  label:'Road Blocked', icon:'🚧' },
-  { key:'police', label:'Heavy Police', icon:'🚔' },
-  { key:'other',  label:'Other',        icon:'⚠️' },
+  { key:'crowd',    label:'Crowd Surge',    icon:'👥' },
+  { key:'police',   label:'Heavy Police',   icon:'🚔' },
+  { key:'block',    label:'Road Blocked',   icon:'🚧' },
+  { key:'protest',  label:'Protest',        icon:'✊' },
+  { key:'riot',     label:'Riot/Unrest',    icon:'🔥' },
+  { key:'chanting', label:'Loud Gathering', icon:'📢' },
+  { key:'concert',  label:'Concert Surge',  icon:'🎵' },
+  { key:'sports',   label:'Sports Crowd',   icon:'🏈' },
+  { key:'fireworks',label:'Fireworks',      icon:'🎆' },
+  { key:'festival', label:'Event Overflow', icon:'🎪' },
+  { key:'medical',  label:'Medical Emerg.', icon:'🚑' },
+  { key:'fire',     label:'Fire Dept.',     icon:'🚒' },
+  { key:'power',    label:'Power Outage',   icon:'⚡' },
+  { key:'incident', label:'Active Incident',icon:'🚨' },
+  { key:'transit',  label:'Transit Surge',  icon:'🚇' },
+  { key:'parking',  label:'Parking/Gridlock',icon:'🅿️' },
+  { key:'rideshare',label:'Rideshare Surge',icon:'🚕' },
+  { key:'weather',  label:'Severe Weather', icon:'🌪️' },
+  { key:'flood',    label:'Flood/Evacuation',icon:'🌊' },
+  { key:'other',    label:'Other',          icon:'⚠️' },
 ];
 
 const SIZES = [
@@ -118,19 +134,19 @@ export function ReportScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container:    { flex:1, backgroundColor:colors.bg },
-  content:      { padding:spacing.lg, paddingBottom:spacing.xxl },
+  content:      { padding:spacing.lg, paddingTop:spacing.xl, paddingBottom:80 },
   title:        { fontSize:22, fontWeight:'600', color:colors.text, letterSpacing:-0.3, marginBottom:spacing.xs },
   sub:          { ...typography.small, marginBottom:spacing.xl },
   sectionLabel: { ...typography.mono, color:colors.textMuted, marginBottom:spacing.sm, marginTop:spacing.lg },
   typeGrid:     { flexDirection:'row', flexWrap:'wrap', gap:spacing.sm },
   typeCard:     {
-    width:'47%', backgroundColor:colors.bgTertiary, borderRadius:radius.lg,
-    borderWidth:1, borderColor:colors.border, padding:spacing.lg,
-    alignItems:'center', gap:spacing.sm,
+    width:'30%', backgroundColor:colors.bgTertiary, borderRadius:radius.md,
+    borderWidth:1, borderColor:colors.border, padding:spacing.sm,
+    alignItems:'center', gap:4, flexGrow:1,
   },
   typeCardActive: { borderColor:colors.primary, backgroundColor:colors.primaryLight },
-  typeIcon:     { fontSize:26 },
-  typeLabel:    { fontSize:12, fontWeight:'500', color:colors.textMuted, textAlign:'center' },
+  typeIcon:     { fontSize:22 },
+  typeLabel:    { fontSize:10, fontWeight:'500', color:colors.textMuted, textAlign:'center' },
   sizeList:     { backgroundColor:colors.bgTertiary, borderRadius:radius.lg, borderWidth:1, borderColor:colors.border, overflow:'hidden' },
   sizeRow:      { flexDirection:'row', alignItems:'center', padding:spacing.md, gap:spacing.md, borderBottomWidth:1, borderBottomColor:colors.borderLight },
   sizeRowActive:{ backgroundColor:'rgba(216,90,48,0.06)' },

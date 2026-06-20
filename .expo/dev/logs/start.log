@@ -296,3 +296,115 @@
 {"_e":"metro:server_log","_t":1781656422576,"level":"info","data":["Launching DevTools..."]}
 {"_e":"metro:bundling:started","_t":1781656424328,"id":"18","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
 {"_e":"metro:client_log","_t":1781656652481,"level":"warn","data":["[expo-notifications]: `shouldShowAlert` is deprecated. Specify `shouldShowBanner` and / or `shouldShowList` instead."]}
+{"_e":"root:init","_t":1781906322323,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781906328154,"id":"19","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781906328154,"id":"19","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781906328158,"id":"19","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781906328706,"id":"19","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781906328768,"id":"19","total":1,"ms":614.068833}
+{"_e":"metro:client_log","_t":1781906339954,"level":"log","data":["[push] Expo push token:","ExponentPushToken[zfDa74LG-s74…"]}
+{"_e":"root:init","_t":1781906550174,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781906555262,"id":"1b","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781906555263,"id":"1b","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781906555313,"id":"1b","total":1,"ms":50.364292}
+{"_e":"metro:client_log","_t":1781906586279,"level":"log","data":["[push] Expo push token:","ExponentPushToken[nx30lkKVtrrx…"]}
+{"_e":"root:init","_t":1781907351968,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781907356833,"id":"1d","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907356833,"id":"1d","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781907356885,"id":"1d","total":1,"ms":52.343542}
+{"_e":"metro:client_log","_t":1781907366682,"level":"log","data":["[push] Expo push token:","ExponentPushToken[f1nN_SL2ONzE…"]}
+{"_e":"metro:bundling:failed","_t":1781907548502,"id":null,"message":"SyntaxError: /Users/parker/Downloads/surgealert-expo/src/screens/MapScreen.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (186:10)\n\n  184 |             </Text>\n  185 |             </View>\n> 186 |           </View>\n      |           ^\n  187 |         ) : (\n  188 |           <ScrollView\n  189 |             style={styles.alertList}","importStack":null,"filename":"src/screens/MapScreen.js","targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1781907569603,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781907574527,"id":"1g","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907574527,"id":"1g","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907574532,"id":"1g","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781907574590,"id":"1g","message":"SyntaxError: /Users/parker/Downloads/surgealert-expo/src/screens/MapScreen.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (186:10)\n\n  184 |             </Text>\n  185 |             </View>\n> 186 |           </View>\n      |           ^\n  187 |         ) : (\n  188 |           <ScrollView\n  189 |             style={styles.alertList}","importStack":null,"filename":"src/screens/MapScreen.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781907577770,"id":"1h","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907577770,"id":"1h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907577773,"id":"1h","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781907577787,"id":"1h","message":"SyntaxError: /Users/parker/Downloads/surgealert-expo/src/screens/MapScreen.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (186:10)\n\n  184 |             </Text>\n  185 |             </View>\n> 186 |           </View>\n      |           ^\n  187 |         ) : (\n  188 |           <ScrollView\n  189 |             style={styles.alertList}","importStack":null,"filename":"src/screens/MapScreen.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781907578720,"id":"1i","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907578720,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907578723,"id":"1i","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781907578735,"id":"1i","message":"SyntaxError: /Users/parker/Downloads/surgealert-expo/src/screens/MapScreen.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (186:10)\n\n  184 |             </Text>\n  185 |             </View>\n> 186 |           </View>\n      |           ^\n  187 |         ) : (\n  188 |           <ScrollView\n  189 |             style={styles.alertList}","importStack":null,"filename":"src/screens/MapScreen.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781907579385,"id":"1j","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907579385,"id":"1j","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907579388,"id":"1j","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781907579402,"id":"1j","message":"SyntaxError: /Users/parker/Downloads/surgealert-expo/src/screens/MapScreen.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (186:10)\n\n  184 |             </Text>\n  185 |             </View>\n> 186 |           </View>\n      |           ^\n  187 |         ) : (\n  188 |           <ScrollView\n  189 |             style={styles.alertList}","importStack":null,"filename":"src/screens/MapScreen.js","targetModuleName":null,"originModulePath":null}
+{"_e":"root:init","_t":1781907607326,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781907612176,"id":"1k","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907612176,"id":"1k","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907612179,"id":"1k","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:failed","_t":1781907612208,"id":"1k","message":"SyntaxError: /Users/parker/Downloads/surgealert-expo/src/screens/MapScreen.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (186:10)\n\n  184 |             </Text>\n  185 |             </View>\n> 186 |           </View>\n      |           ^\n  187 |         ) : (\n  188 |           <ScrollView\n  189 |             style={styles.alertList}","importStack":null,"filename":"src/screens/MapScreen.js","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:started","_t":1781907858356,"id":"1l","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907858356,"id":"1l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907858361,"id":"1l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907858461,"id":"1l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1781907858473,"id":"1l","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781907858509,"id":"1l","total":1,"ms":152.97975}
+{"_e":"metro:client_log","_t":1781907864584,"level":"log","data":["[push] Expo push token:","ExponentPushToken[t2M_qdN-UIou…"]}
+{"_e":"root:init","_t":1781907957159,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781907962207,"id":"1n","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781907962208,"id":"1n","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781907962252,"id":"1n","total":1,"ms":44.374042}
+{"_e":"metro:client_log","_t":1781907984391,"level":"log","data":["[push] Expo push token:","ExponentPushToken[hbDXpaD3EYlU…"]}
+{"_e":"root:init","_t":1781908149135,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908153500,"id":"1p","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908153501,"id":"1p","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908153567,"id":"1p","total":1,"ms":66.843375}
+{"_e":"metro:client_log","_t":1781908176873,"level":"log","data":["[push] Expo push token:","ExponentPushToken[ikZ2zZBsSZud…"]}
+{"_e":"root:init","_t":1781908438755,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908443786,"id":"1r","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908443786,"id":"1r","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908443831,"id":"1r","total":1,"ms":45.01325}
+{"_e":"metro:client_log","_t":1781908465460,"level":"log","data":["[push] Expo push token:","ExponentPushToken[isGarRNjih_2…"]}
+{"_e":"root:init","_t":1781908529451,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908534127,"id":"1t","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908534127,"id":"1t","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908534172,"id":"1t","total":1,"ms":44.735291}
+{"_e":"metro:client_log","_t":1781908557098,"level":"log","data":["[push] Expo push token:","ExponentPushToken[CYT5wGDjUWj6…"]}
+{"_e":"root:init","_t":1781908660297,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908665018,"id":"1v","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908665018,"id":"1v","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908665065,"id":"1v","total":1,"ms":46.849125}
+{"_e":"metro:client_log","_t":1781908688430,"level":"log","data":["[push] Expo push token:","ExponentPushToken[IvulYEHyXFJ8…"]}
+{"_e":"root:init","_t":1781908756989,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908761873,"id":"1x","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908761873,"id":"1x","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908761916,"id":"1x","total":1,"ms":42.51225}
+{"_e":"root:init","_t":1781908813786,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908818631,"id":"1z","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908818632,"id":"1z","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908818681,"id":"1z","total":1,"ms":49.104125}
+{"_e":"metro:client_log","_t":1781908825342,"level":"log","data":["[push] Expo push token:","ExponentPushToken[pCuAcFMeLuHF…"]}
+{"_e":"root:init","_t":1781908896613,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781908901610,"id":"21","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781908901610,"id":"21","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781908901676,"id":"21","total":1,"ms":66.203375}
+{"_e":"metro:client_log","_t":1781908926663,"level":"log","data":["[push] Expo push token:","ExponentPushToken[H9kGtyE2Suab…"]}
+{"_e":"root:init","_t":1781909090230,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781909094692,"id":"23","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781909094693,"id":"23","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781909094750,"id":"23","total":1,"ms":57.301792}
+{"_e":"metro:client_log","_t":1781909117855,"level":"log","data":["[push] Expo push token:","ExponentPushToken[X1wyDXEVA9lB…"]}
+{"_e":"metro:server_log","_t":1781909201907,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","app.surgealert.mobile","moto g stylus - 2025 - 16 - API 36","60"]}
+{"_e":"metro:server_log","_t":1781909430885,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","app.surgealert.mobile","moto g stylus - 2025 - 16 - API 36","60"]}
+{"_e":"metro:server_log","_t":1781909538279,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","app.surgealert.mobile","moto g stylus - 2025 - 16 - API 36","60"]}
+{"_e":"root:init","_t":1781910225430,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781910231460,"id":"25","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781910231460,"id":"25","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781910231512,"id":"25","total":1,"ms":51.497584}
+{"_e":"root:init","_t":1781910253259,"format":"v0-jsonl","version":"56.1.14"}
+{"_e":"metro:bundling:started","_t":1781910258177,"id":"26","platform":"android","environment":null,"entry":"node_modules/expo/AppEntry.js"}
+{"_e":"metro:bundling:progress","_t":1781910258178,"id":"26","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1781910258224,"id":"26","total":1,"ms":46.421542}
+{"_e":"metro:client_log","_t":1781910266979,"level":"log","data":["[push] Expo push token:","ExponentPushToken[hmYZT5PCnbFf…"]}
+{"_e":"metro:client_log","_t":1781910314937,"level":"log","data":["[search] searching for:","C"]}
+{"_e":"metro:client_log","_t":1781910314991,"level":"log","data":["[search] searching for:","Ch"]}
+{"_e":"metro:client_log","_t":1781910315237,"level":"log","data":["[search] searching for:","Chi"]}
+{"_e":"metro:client_log","_t":1781910315438,"level":"log","data":["[search] searching for:","Chic"]}
+{"_e":"metro:client_log","_t":1781910315882,"level":"log","data":["[search] searching for:","Chica"]}
+{"_e":"metro:client_log","_t":1781910316060,"level":"log","data":["[search] searching for:","Chicag"]}
+{"_e":"metro:client_log","_t":1781910316297,"level":"log","data":["[search] searching for:","Chicago"]}
+{"_e":"metro:client_log","_t":1781910317251,"level":"log","data":["[search] loc:","{\"lat\":41.88325,\"lng\":-87.6323879}"]}
+{"_e":"metro:server_log","_t":1781912296351,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","app.surgealert.mobile","moto g stylus - 2025 - 16 - API 36","60"]}

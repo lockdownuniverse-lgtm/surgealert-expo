@@ -174,8 +174,10 @@ export function MapScreen({ navigation }) {
           </View>
         ) : alerts.length === 0 ? (
           <View style={styles.clearState}>
-            <Text style={styles.clearEmoji}>✓</Text>
-            <Text style={styles.clearTitle}>Area looks clear</Text>
+            <View style={styles.clearRow}>
+              <Text style={styles.clearTitle}>Area looks clear</Text>
+              <Text style={styles.clearEmoji}> ✓</Text>
+            </View>
             <Text style={styles.clearSub}>
               No surge activity within 1.5 miles.
               {lastUpdated ? `\nUpdated ${lastUpdated.toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' })}` : ''}
@@ -227,6 +229,7 @@ const styles = StyleSheet.create({
   container: { flex:1, backgroundColor:colors.bg },
   centered:  { flex:1, justifyContent:'center', alignItems:'center', padding:spacing.xl, backgroundColor:colors.bg },
   map:       { flex:1 },
+  clearRow:     { flexDirection:'row', alignItems:'center', justifyContent:'center', marginBottom:2 },
   reportMarker: { backgroundColor:'rgba(10,11,14,0.8)', borderRadius:20, padding:4, borderWidth:1, borderColor:'#444' },
   reportMarkerText: { fontSize:18 },
   searchBtn: { padding:8, marginLeft:'auto' },
@@ -250,9 +253,9 @@ const styles = StyleSheet.create({
   },
   handle: { width:36, height:3, backgroundColor:colors.border, borderRadius:2, alignSelf:'center', marginBottom:spacing.md },
   sheetLoading: { flexDirection:'row', alignItems:'center', justifyContent:'center', padding:spacing.xl },
-  clearState:   { alignItems:'center', padding:spacing.md, paddingBottom:spacing.lg },
-  clearEmoji:   { fontSize:22, color:colors.low, marginBottom:4 },
-  clearTitle:   { fontSize:15, fontWeight:'600', color:colors.low, marginBottom:2 },
+  clearState:   { alignItems:'center', paddingVertical:spacing.xs, paddingHorizontal:spacing.md, marginBottom:60 },
+  clearEmoji:   { fontSize:15, color:colors.low },
+  clearTitle:   { fontSize:15, fontWeight:'600', color:colors.low },
   clearSub:     { ...typography.small, textAlign:'center', lineHeight:20 },
   sectionLabel: { ...typography.mono, color:colors.textMuted, marginHorizontal:spacing.lg, marginBottom:spacing.md, marginTop:spacing.sm },
   alertList:    { flex:1 },
