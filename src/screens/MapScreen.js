@@ -9,11 +9,7 @@ import { useLocation } from '../hooks/useLocation';
 import { useSurgeAlerts } from '../hooks/useSurgeAlerts';
 import { SeverityPill } from '../components/SeverityPill';
 import { AlertCard } from '../components/AlertCard';
-import { colors, spacing, radius, typography, severityColor } from '../utils/theme';
-import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
-
-const BANNER_ID = __DEV__ ? TestIds.BANNER : 'ca-app-pub-8910107620800982/3967505057';
-import { CitySearch } from '../components/CitySearch';
+import { colors, spacing, radius, typography, severityColor } from '../utils/theme';import { CitySearch } from '../components/CitySearch';
 
 export function MapScreen({ navigation }) {
   const { location, loading:locLoading, error:locError } = useLocation();
