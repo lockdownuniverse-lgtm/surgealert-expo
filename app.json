@@ -52,6 +52,13 @@
           "color": "#D85A30",
           "sounds": []
         }
+      ],
+      "react-native-google-mobile-ads",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-8910107620800982~4163241320"
+        }
       ]
     ],
     "extra": {
